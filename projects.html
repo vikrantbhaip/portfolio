@@ -213,19 +213,19 @@
         <div class="video-grid">
             <!-- Shorts 1 -->
             <div class="video-card">
-                <iframe src="vdo/1.mp4" allowfullscreen></iframe>
+                <iframe controls preload="none" src="vdo/1.mp4" allowfullscreen></iframe>
             </div>
             <!-- Shorts 2 -->
             <div class="video-card">
-                <iframe src="vdo/2.mp4" allowfullscreen></iframe>
+                <iframe controls preload="none" src="vdo/2.mp4" allowfullscreen></iframe>
             </div>
             <!-- Shorts 3 -->
             <div class="video-card">
-                <iframe src="vdo/3.mp4" allowfullscreen></iframe>
+                <iframe controls preload="none" src="vdo/3.mp4" allowfullscreen></iframe>
             </div>
             <!-- Shorts 4 -->
             <div class="video-card">
-                <iframe src="vdo/4.mp4" allowfullscreen></iframe>
+                <iframe controls preload="none" src="vdo/4.mp4" allowfullscreen></iframe>
             </div>
         </div>
     </main>
@@ -255,6 +255,16 @@
             document.getElementById('mobileMenu').classList.toggle('active');
         }
     </script>
+
+    <script>
+document.querySelectorAll("iframe").forEach(frame => {
+    frame.addEventListener("click", function() {
+        if (!this.src) {
+            this.src = this.dataset.src;
+        }
+    });
+});
+</script>
 
 </body>
 </html>
